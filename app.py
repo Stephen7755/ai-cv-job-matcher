@@ -19,14 +19,42 @@ st.title("AI CV ↔ Job Matcher")
 st.write("Compare your CV against a job description using NLP embeddings.")
 
 skills_list = [
-    "python", "sql", "machine learning", "deep learning", "pandas",
-    "numpy", "scikit-learn", "tensorflow", "pytorch", "nlp",
-    "llm", "data analysis", "data visualization", "matplotlib",
-    "seaborn", "power bi", "tableau", "excel", "postgresql",
-    "mysql", "aws", "azure", "gcp", "docker", "fastapi",
-    "flask", "streamlit", "git", "github", "statistics",
-    "classification", "regression", "clustering", "model deployment",
-    "api", "etl", "data cleaning", "feature engineering"
+    # General workplace skills
+    "communication", "leadership", "teamwork", "problem solving",
+    "time management", "customer service", "project management",
+    "stakeholder management", "report writing", "presentation skills",
+    "attention to detail", "organisation", "training", "sales",
+    "negotiation", "administration", "research", "planning",
+
+    # Business and office skills
+    "microsoft office", "excel", "word", "powerpoint", "outlook",
+    "data entry", "crm", "reporting", "budgeting", "invoicing",
+    "scheduling", "documentation", "compliance",
+
+    # Data / tech skills
+    "python", "sql", "data analysis", "data cleaning",
+    "power bi", "tableau", "machine learning", "ai",
+    "statistics", "dashboard", "database", "api",
+
+    # Marketing
+    "digital marketing", "seo", "social media", "content creation",
+    "email marketing", "campaign management", "copywriting",
+
+    # Finance
+    "accounting", "bookkeeping", "payroll", "financial analysis",
+    "reconciliation", "forecasting", "audit",
+
+    # Healthcare / care
+    "patient care", "safeguarding", "care planning",
+    "risk assessment", "health and safety",
+
+    # Education
+    "teaching", "lesson planning", "curriculum", "mentoring",
+    "tutoring", "classroom management",
+
+    # Retail / hospitality
+    "cash handling", "inventory management", "stock control",
+    "food safety", "front of house", "hospitality"
 ]
 
 def extract_text_from_pdf(uploaded_file):
@@ -67,7 +95,7 @@ def generate_llm_suggestions(
     job_text
 ):
     prompt = f"""
-You are an expert UK AI/Data career coach.
+You are an expert UK career coach helping candidates across all industries.
 
 Analyse this CV against the job description.
 
